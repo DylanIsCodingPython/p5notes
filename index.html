@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400;6..144,500;6..144,700;6..144,900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<script type="module" src="https://esm.run/@material/web/all.js"></script>
 <style>
 :root{--primary:#6750A4;--on-primary:#fff;--primary-container:#EADDFF;--on-primary-container:#21005D;
 --secondary-container:#E8DEF8;--on-secondary-container:#1D192B;--tertiary-container:#FFD8E4;--on-tertiary-container:#31111D;
@@ -14,6 +16,30 @@
 --surface:#FEF7FF;--surface-container:#F3EDF7;--surface-container-high:#ECE6F0;--on-surface:#1D1B20;--on-surface-variant:#49454F;--outline:#CAC4D0;--tertiary:#7D5260;--xl:28px;--lg:20px;--full:999px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:"Google Sans Flex","Google Sans","Roboto",-apple-system,Arial,sans-serif;color:var(--on-surface);background:var(--surface);line-height:1.5;}
+.msr{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24;-webkit-font-smoothing:antialiased;vertical-align:middle;}
+.btn .msr{font-size:19px;margin-right:6px;vertical-align:-4px;}
+.toggle-link .msr{font-size:16px;margin-right:4px;vertical-align:-3px;}
+.link .msr{font-size:14px;margin-right:3px;vertical-align:-2px;}
+.lock .msr{font-size:46px;}
+.ic .msr{font-size:27px;}
+.tg .msr{font-size:15px;margin-right:3px;vertical-align:-3px;}
+.editor h2 .msr{font-size:22px;margin-right:6px;vertical-align:-4px;color:var(--primary);}
+h2.dt .msr{font-size:28px;margin-right:6px;vertical-align:-5px;}
+/* Material Web (official Google M3 components) theme tokens */
+:root{
+  --md-sys-color-primary:#6750A4;--md-sys-color-on-primary:#FFFFFF;
+  --md-sys-color-primary-container:#EADDFF;--md-sys-color-on-primary-container:#21005D;
+  --md-sys-color-secondary-container:#E8DEF8;--md-sys-color-on-secondary-container:#1D192B;
+  --md-sys-color-tertiary-container:#FFD8E4;--md-sys-color-on-tertiary-container:#31111D;
+  --md-sys-color-surface:#FEF7FF;--md-sys-color-on-surface:#1D1B20;
+  --md-sys-color-surface-container-highest:#E6E0E9;--md-sys-color-on-surface-variant:#49454F;
+  --md-sys-color-outline:#79747E;--md-sys-color-error:#B3261E;
+  --md-ref-typeface-brand:"Google Sans Flex","Roboto",sans-serif;
+  --md-ref-typeface-plain:"Google Sans Flex","Roboto",sans-serif;
+}
+md-outlined-text-field{width:100%;margin-bottom:12px;--md-outlined-text-field-container-shape:16px;}
+md-filled-button,md-text-button,md-filled-tonal-button{--md-filled-button-container-shape:999px;--md-text-button-container-shape:999px;--md-filled-tonal-button-container-shape:999px;}
+md-icon{--md-icon-font:"Material Symbols Rounded";font-variation-settings:'FILL' 1;}
 #gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:var(--surface);z-index:1000;}
 .login-card{background:var(--primary-container);color:var(--on-primary-container);border-radius:var(--xl);padding:34px 32px;width:100%;max-width:360px;text-align:center;}
 .login-card .lock{font-size:40px;margin-bottom:10px;}.login-card h2{font-size:22px;font-weight:900;margin-bottom:6px;}
@@ -73,7 +99,13 @@ h2.dt{font-size:26px;font-weight:900;margin-bottom:4px;letter-spacing:-.3px;}
 .editor h2{font-size:20px;font-weight:800;margin-bottom:4px;}
 .editor .hint{font-size:12.5px;color:var(--on-surface-variant);margin-bottom:16px;}
 .editor label{font-size:12.5px;font-weight:700;color:var(--on-surface-variant);display:block;margin:10px 2px 4px;}
-.editor input{width:100%;font-family:inherit;font-size:15px;padding:12px 15px;border:1.5px solid var(--outline);border-radius:var(--lg);background:#fff;color:var(--on-surface);}
+.editor input,.editor textarea{width:100%;font-family:inherit;font-size:15px;padding:12px 15px;border:1.5px solid var(--outline);border-radius:var(--lg);background:#fff;color:var(--on-surface);}
+.editor textarea{min-height:110px;resize:vertical;line-height:1.45;}
+.toggle-row{margin:12px 2px 0;}
+.toggle-link{background:none;border:none;color:var(--primary);font-size:13px;font-weight:700;cursor:pointer;padding:0;text-decoration:underline;}
+#customWrap{display:none;}
+.orbar{display:flex;align-items:center;gap:10px;margin:14px 0 4px;color:var(--on-surface-variant);font-size:12px;font-weight:700;}
+.orbar::before,.orbar::after{content:"";flex:1;height:1px;background:var(--outline);}
 .editor .actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;}
 .status{font-size:13px;font-weight:700;min-height:18px;}
 .link{background:none;border:none;color:var(--on-surface-variant);font-size:12px;text-decoration:underline;cursor:pointer;padding:0;}
@@ -82,49 +114,51 @@ h2.dt{font-size:26px;font-weight:900;margin-bottom:4px;letter-spacing:-.3px;}
 <body>
 
 <div id="gate"><div class="login-card">
-  <div class="lock">🔒</div><h2>My Notes Library</h2>
+  <div class="lock"><span class="msr">lock</span></div><h2>My Notes Library</h2>
   <p>Enter your password to unlock your notes.</p>
   <div class="err" id="err"></div>
-  <input type="password" id="pw" placeholder="Password" autofocus>
-  <button id="unlockBtn">Unlock</button>
+  <md-outlined-text-field type="password" id="pw" label="Password"></md-outlined-text-field>
+  <md-filled-button id="unlockBtn" style="width:100%;margin-top:4px;">Unlock</md-filled-button>
 </div></div>
 
 <div id="app">
   <div id="library">
     <div class="hero">
       <div><span class="eyebrow">MY NOTES LIBRARY</span><h1>Study Notes &amp; Cheatsheets 📚</h1></div>
-      <button class="btn" id="exportBtn">⬇ Export website</button>
+      <md-filled-button id="exportBtn"><md-icon slot="icon">download</md-icon>Export website</md-filled-button>
     </div>
     <div class="grid" id="grid"></div>
   </div>
   <div id="detail">
-    <button class="btn back" id="backBtn">← Back to library</button>
+    <md-text-button id="backBtn" style="margin-bottom:18px;"><md-icon slot="icon">arrow_back</md-icon>Back to library</md-text-button>
     <div class="detail-body" id="detailBody"></div>
   </div>
 </div>
 
 <div id="modal"><div class="editor">
-  <h2>✨ Generate a note with Claude</h2>
+  <h2><span class="msr">auto_awesome</span>Generate a note with Claude</h2>
   <div class="hint">Type a topic and Claude writes the note. Your API key stays in this browser only and is never included when you export.</div>
-  <label>TOPIC</label>
-  <input type="text" id="topic" placeholder="e.g. The respiratory system (Primary 5)">
-  <label>YOUR CLAUDE API KEY</label>
-  <input type="password" id="apikey" placeholder="sk-ant-...">
-  <label>MODEL</label>
-  <input type="text" id="model" value="claude-sonnet-5">
+  <md-outlined-text-field id="topic" label="Topic" placeholder="e.g. The respiratory system (Primary 5)"></md-outlined-text-field>
+  <div class="toggle-row"><button class="toggle-link" id="toggleCustom"><span class="msr">edit</span>Write a custom prompt instead</button></div>
+  <div id="customWrap">
+    <div class="orbar">OR DESCRIBE WHAT YOU WANT</div>
+    <md-outlined-text-field type="textarea" rows="4" id="customPrompt" label="Describe what you want" placeholder="Like chatting with Claude, e.g. 'Make me a P5 note on the water cycle, focus on evaporation, add a fun example and 3 practice questions.'"></md-outlined-text-field>
+  </div>
+  <md-outlined-text-field type="password" id="apikey" label="Your Claude API key" placeholder="sk-ant-..."></md-outlined-text-field>
+  <md-outlined-text-field id="model" label="Model" value="claude-sonnet-5"></md-outlined-text-field>
   <div class="actions">
-    <button class="link" id="forgetKey">Forget saved key</button>
+    <md-text-button id="forgetKey">Forget saved key</md-text-button>
     <div style="display:flex;gap:10px;">
-      <button class="btn back" id="cancelBtn">Cancel</button>
-      <button class="btn" id="genBtn">Generate</button>
+      <md-text-button id="cancelBtn">Cancel</md-text-button>
+      <md-filled-button id="genBtn"><md-icon slot="icon">auto_awesome</md-icon>Generate</md-filled-button>
     </div>
   </div>
   <div class="status" id="status" style="margin-top:12px;"></div>
 </div></div>
 
 <script>
-const CFG = {"salt":"M8nrrU1Nuq4Ev6+ndzYzeQ==","iter":600000,"vIv":"ZsIMuRwzztkAFNC4","vCt":"x9AUaTmG6xNOEW79VxbYxt7Vr4f/1mM+","nIv":"jihTpu6XD0XKFsUc","nCt":"FIEM4N6Rw1jgfL6LwgFfa7RXpEmiP/PwmhJkwIS08HxZt0V3JSlUb+HKfzVgliNIl7Us71m+LIW1d8PhEszKaRWJ2sjK3gJv6FpHhAgcTyOHe44Dbwe4+Ki+v/ZCi87vLUC5cM1eYPugytTOe7j8gbFoMurpB0IUK47xFb6NV2PgyX7hP0y5+UYl1T1fASNV7CQz9Ip1zfls+gpaDZHJvqaR+A34xWMfvgesvOyv/ZlW/G/QUuK5PTP4EaUe7kcgoVarbIUBCMLwyqSc6Q676tGl72O1ZYJ2QAxfzrdDNVqr73GmXHS43oYsxD8nzBlGA4fuRGYYjQ+GI8tCSj20jheI8efqxsu9AY6E9R8bgDApRIWigE3H11mEckjejBD4k8btp1swIsiXjwEYvzJG4MgFS0PJWKjzA/lxtB1+oaGhMLuLWDk7hVC8d70keYNTWWZIGoqo4EkH2phMFRH7jjb4Naj0EeavdQOJy3e07Ca1VfZ14yVVvMsDmxf0/LUdriTuXPeBJUpiqPwzTAfSIxakfovF18G2bwB3AWd7txntTID34Ia9dw+Dou5gU0+hrdysmUoeoh2MyFofydYy0gie1sYngFOZurN99EwfIRKOiR5BQAezDDw1fwbXyfEoL2pPSxK+AwLQIDgrpBrhwK3A/bdO4eAVb3KdffgXg+qCIU0+kvMQT44DoVSn4SiIpdq3d/4TgiRUb8ahaPcowhr9j0cSoa3EXdLxhL7m5i9Wvn8SKaiv0FG3rPFZP7lHjtv5K2ryc1IlA6n/GSh3+K7pG22tWwUgPBTSihLT0n9OhMM5/p6nYf1cWMECo2BXaJsbQlKYQYjlD5+aQ/1zt89/gjizdmNKtZPd7kQxi3O0Jh1PIt8uIUZo2UJUw9byuKdPMYAII968i/qfiX5UvDOeYeKAr/uQQXin3vFTYYdTZyXhHHz0rvQ8pnROx7gez83RFlxjQnlUYRbIkNEaKSwuG3VbKJqqAmIxX21ZVuuPeWWtA1tyZiDzv3w/euh2QRrqCXZ058rhMXnzl6p61V3AFtCS2jEnoFdFuZj34acDGlKpB9mbdOBy8+vu3m/X/RHFuPZaIA0NCDLwKhMtIUjjUD/Znr5USwFqdWSvAJ7r2zEFfE0n9HpthPfyYcAL3PTgo+qLMJRx18fRrcEMtVeDDkkg4Vl3XI5gPayBi8+nBOPDFVjfyX/ZGGppO3zBGJhTUpm31tU7GcKRNgOwggmjG0mFBE2c/SlASaRVNmeI5IiKzR+6LCpIyohkEfnGUnwdXQSlSavVV8iC3euydXgXJk/00GzEJhjUp7Wp7FKvyTsP8qUAL+iSvTsBn7bfClWraumChGZODTHxzI/k4psjelLlCFL65jSjvek5aBE8vPgSbIvP4TXFSBOL72IL10hgIdJarNC8ajYudbMMTqbQg3AJjz14Wan+rzkwTeFGDsVrfCbBi+4t5eA+YaQS5O5HaGnYpCPtl3WqgqB8cxXmK2asOhRNboMWvHZO/NEuNr8e+iB3kW/77sZ3Y9YKt2lQ6L2jrpVzCscpqIMoAMEuilvjSE79FsHNSPJy7d6IPHEEB+HjdpBTQyYOtp9RFkyvAkv9ewzumzAgJ713GPXcc7i3psP4rQ0rmvF/oGzzcvqtr0bpOdDG+oDxcv29Fcq9aXs23YDvXfdf6f+drRlXQuAvPftP5KXg6erwhWlHauZxGl7Z0qWIy/NivMDIU8Ia41M/EBxvfcIL22ErMtRBDeDs0dqNCn1bygTVLP/UEfb5SeHOfBLPU+OA/N80RJxu0nLV9h0O7LuC3DJR3WkWuUUkNF6rE/8B/mYzSX8/O2kutCWfi0Xs8hmDh8IL1Fu/+p6kuDQLfdzfMjXuVDvk5YiGaNFU+2EXorOJE5/yFo7suiBq1G9VMADXsWmBS+E9wXTOFFOmi6J30uaIK45CCDJ9fJLrSl3cuAO6i42nkIPgRZUwlvKCp1wNK+Ef8UZOa48ozIZOnrOw+l9XuWHjsljQDsPrQzj49l2fXIzCSh3fQmVP4VXpEixalSlpGuRXKhVhNg5BI14+F7Qs9RBL1R+k8XVC1wFyH0AeCbiIZa9pyASQTu0Q7AScPUH4MILw2uUV9sMMesOGh7tks0nRVNBuDxLgWKeuGN3YcKw28HEIiqMBU/6sz2o9InBGBMh4PMIz9+4FtgOqRmVob6RvIP63oyW6O8/mUBrvY5DmUe3OJ5wtVeC5tt2O1kAJxOe1MfSYwJjshMHoT6RV66x1ltVRqux6i5BNpLeg4wXIUEtH0ekJyiltX0ZHU33lY3r6Hosgh9aq47Bvlv46J76H42W6+YWlnG99p9alDsyn90XJlWGaaGN2wR4pwLd8ctjHQBsF3wqynF1psfZp3v2vYGSwHTazCfMaR068w98tIrEEUI8eFGEss5IasQ/X5xNa/lY/WI3YRt9kgIKOTpRM962g0NJyVOO6qzm0WXg60QRwUcEjLiiYWtCAkIOUu4xFBZSkNYR21xV1WVRP3DGhEfiQhq8+kZINx8WzTXprVHUeeDz2EhFe8kJhnhAJZHdtDfBXBpqzXEsuHg7ZTRvcblPWuppWr2Y094tYxDsFnKFI6nMzW1EUjglkVw/GtukdxTW8Osc6JnJicrqOew3/+2y7nbczPMa4ySl2T3rfTRvaKr+eFWUTWKWwr/BT4nKmhCk/4P9MLNCUaNtuAideyH7Rg3ailc+G7jlBdbtBvLftTS0o3IyPsHFciF1b6ri0peM5xWnZiELqrOTqzvvzsZlucwhGpJ64sF30F9YGk9VkqlBsw05NMgCu8sgiD+ph3i0I4jecBI+n39G4SyGA2E/nX/cpAootxz7YfvqyWGQglGDbtEWUdpiTTqV7xjTXGPtX5CpNVAmdt0IgyVpKcSWqKaR7J2Ug9UBdpcp1I26Rv5W5rM0tXgNNYP5nYMGLUh/7mgCpwxMzCyjXpO4o3RR3WP1Dv8nhq48TRrO2zJTni6E8T+WVNqLgK6VYpun3I3D04vBATKMgY3Qf1F3QCzbm2USMFOkGSZQRhx15gnxmA6mxVjok+yOcOHRX5/lpo2mpkYaifqrdojNS3nYs5QUUf8QsvzXV0+T61g7uxuFrPLpDh/IVdrOTBCLdwYC5A9grsRj3UKS32JRu1w1NhnQcBZdGrLtJjGyFcfFC5Jx0xiEXAaqMlCMFnJtjsNasZ5+NkV8n+V+RRFscimjCyI6eEywQAn+1L85+ZtbTnblTxigBUeMCK+YMonTkD1QG6CTN2PkFt4GJoZvDC8ebtBjFUl3vka4TeI09k4xs0geGMoKNtVhLxQ1JHhjUDg7Gzs2AwtVBpO21PUHFs1tlcwDZJfU64qc6hUp5kUwxSvG5VXAROOsS44c0nPk12knG4dLskniHTc4fxvhbbVbQs5YWC5GAFSVQft1mVXnKZn4EsbYBpISyhgX2D3TWqFzgJB+HsquN/EgTmgx/xIC+JrKozV2LgAWuSRPe+fQsZ+bbNB1mFQQNs/+D1UoZtTy1wZlqDbA4jhCB5lru4zzyQB5ZsYtMo0dcUW3rtSQf7lFiPaAWuuItJ/CywOsV4Kjh5HArNWOAwKl8g3vHbGlb2nirhZ0z8J/JRgNQy2hC+H7XH4Nas7eupRcTpleZzQjBTxTINUDsB8fMdhGJAcfotXGCT4e6/aeD/5JCMuDqW/SE"};
-const COMING = [{"emoji":"🫁","title":"Respiratory System","summary":"Breathing, oxygen & carbon dioxide, and why breathing speeds up during exercise."}];
+const CFG = {"salt":"ckEUhj/xSbyB0Sx4sOg8sQ==","iter":600000,"vIv":"VUIhxb/eEFJHDoYe","vCt":"xMvDKlSd23NAS98iOfks04/z+0kOgEh6","nIv":"Ib/wqkJ1Zfp7pBsT","nCt":"sYr22Xn6Hw21F588p50QGiU54YAlbw2GJHK/p7XZvZeDrMGNc90goVsmdM1/vQ1ownyMXU8Ke3wWJixOLRrz93prRthDHY8TxvmT9yjD1qyOe21dGkDm9wzTNI/MdNZ9VAKFBma518+naUH6GWzxBZbvfP0e+pDBJCFKdl/nW/f0JWg3aYYkgleiWNTzraybWJLfFJ/y/2yt1jJfHE+H3jwwnebvgChhYPcUQdzqLCdzxr0svWy6UmUy5tMMU3VZoL0EAVLhKuYgNoaLlJ6LtK+Rjc/OgzjswNMVZo6EubEcZHcKMGoQAbupasmxnDuWv8S/kZrHXpWlVFnROqHfuKl1nR7RrbCiTaREqjIjeDlMjqFkuHst6U41XVwj+6w9FNXHmG8Eu5b13peVqHCO0o8XmORDmvnnEpYjrY8FURUPw1KiiZ3J4+mOQUdIZuhKDOf68J4E62t03n7ilmRnzs4Ln/rxNc1Q+qnl6FhwfDSbG5Wm2y1uJX0z4TQayFZpaVCIgTNGyD5q5EaBcEa+bv/PpfyYJyKOMDwhwZ3Pd3RL/F3cYny6YeECnBgtH5R7TW0QIZNUEcwsaPfEwBTB2aldaPBf5CbOrXsxktYvf7htqvJgiY3HOqnLxARf9vO+RtR4HPEn2i86Yo/WUnW4CqMH8BsBauPNUflNDzGK6Y2p5Ynjmamx4+MzmFKo9f6LkJvcS04Opmtp9wxVadr3HmuBYKxrg/fQ1dj2yK0bEH2HycGCOYe28535vO1tY0j/4Dk/gqVL6mwNKcaysHwFssEkEz/m6TL58Vf5uRjoLtQIwlJ965k1XKJW1DigV7bSLgwj02RIalVW7MdmcWj9yldxyiAsno4B5x+SxN1BhDLW1I2QHSw/7vgOSPz8VM53/HBS3lol2cb2Agf4D1UA9w9gY323UiH05yZyaRMIb6BZYPkiomnQTUF/GOH0JDQzUN4SPY1Zt4RRQJSvjDiuJMlR9sBPiBdUqWgh2vdtFc261kHzSBdxU4vC9/hp93DvCi0w7aXInfZsXVrEUl2dRqd9hxm+5PaAnASSm/Tb51aXLvWLoVXNChsx9ykIbQJj1WBvp/z7u/ddXdyI7Uyav2RxtThXV9hvAVRZxv8/M1VEQjmsugsL+T2lfIAdASXy3t3RSEdc4x0D5z1Vnj8FfU2bs93mr+05Sp2k/WJSynpvHAQ6DxO8octy+sIkdDXkr9HI3byNRBq95vogRonB51el2nIeZVXx9kCd23n3jLHtf3GCkLztUsJsWqVNABlYjo4wodDHcavlKQf8/FNNYDTC0tNwI6om4uQ/mMlkB4L4vvnh06dbs79ek4ToQPxCspgRhmG4nNcLRXNm9RMpJfmjt6ue/WbFKEmaZB/CC1XxU0Ofwkn8DwUkeVfsrt6G4GKjGCiYnCIBjSHQ9obAvR+bUPE3E9xc2b3MSA4VbR8mtjv5J0cmW+y3qVNiQuULFYDW2GgqFW1kM8w1RGOVqdl6N74oZSnALidwf+iZKzz/2NTjBJjMypzQhUvVJ8MxWGh62tZTA62bsFAGeyIFeZT/qKUGytUgeE9HT1PvxUnOhOuKD+p0HQhTWXutNjcJK5fQgAAx/fRqKiAQ4ney1+aOO0I73UmWfDxf99XQx63vOttuwNTs1eBRl4HcPv5iSVcvkL4kc7NHZpe+SerGKekd7M8FwXez5iJf3/oUMC7H3gcCkbstEf5YsQ3kB4Y4SjDqPywaF36bP3nyDqYI+GTNq7Sjs2QTpBfqIG4SCh89BKFwQehXFsb+pUAKMr84C0kxBPbnDlKxZ/O6Bxfg696c76L9CnhUxYP/VoyGLd71QB9EBHyS/6Di+UuVSiVqsG9mWTPO0fN6WW3C9OJH/2FO6qMI+UiEdms5xNIXFLh2M+E0FO/WeDTJv5NMv9N1dARlinBjAowutXkM+tESkjfek7oppyQfBk6VuCKJpdGDU+QInmb/xz/a0x0YPMk/HS2OIrA0+aiiAO91XhVK/Ghotuo4zCxBVgc+0P79XcpbQnkJQjbWlPRlvhwMtRrYx9QdXiu1fjimYAZmdQH8DS5FNGGSpF81MaSf9J5MZ1dw5SMDiY7x1S33PfKaHZWr5zTZ8h5jGl6fclmrd4Ug5ASN9jspDGO26hq7OUJtZCn32p9KmnEKQfTc0DFpHUyixptFDw8RdzGbtDhCDYM2k27GnR/vEbXfIgThdu2vFtYKbGpCUYlzNGNwZjLErzB4ueDuxG7fgjNp89d7ReWJq1zd0BVjDQ/SVibTNSQBtPx1ycCMwxl1LvPsxurz3A1NkAmLn0TqsYL/VH6UZyDK28wjkwO8n/pEEY21rmKcCKhCnp8qw9R1uvHuljqfo8AWU6MfrN1rDEX6erp8zo5qLG2lD+/FSCprkPDJHbfEuFAvaOyL225RWYLbPwddvxmxmoQF0ExW2W5gpEj9kw/026b2PEjNV3y8aIdi1l8uIPKDiomn+UmzjNJ1nEmKn5DnyYfGZEcYU7vNVs7kQ8a5XoupC+H3O44N6JG7kSX/wwNs0plZb1KczszKexhd6R5rILgkjQhtXtt5hX1EFCQxCyLA3hw9+UTPAIlf11jxzHRTxcYfdn2MzWuZi2PXi8m97+QBto8zhPuQISy+Jt48vhmZiz+2XUM7rmMRiDq7cbPn793jGuHX8sW2+2cNOgtkEZB1EHffK0yGZPmQ2Jxxce4IBfZTOHw5PinSVxbbT7MO5/lebEZsNZhzrh/AU8CAvompZMwRi4rafqcDFSHyDOQuFcZXHyro7pPuFLKXEQHI2QlM7ztPHlJ5RTrY8ChAKSY2hfFsc2qrHMpn6B3ScqR5TVKp2XKCrbpHrflXlDgl6Z1dOBPKy2ZL6jos1j7GuGlPkyZDg7J5wfDFoJU8Xpmh9ECpjtjAR7Ka1tqn0X8QVhaXn8uqd6mYmjbIvv/1KMfJyiWQBT/aU5sr6srGRvoM8HiJLnwBnvA90kSNRgylMh/JtF4SELroCCrDo/OlXiZLhVUbr7INRCKr+9Ymxxo6kDD//zD+URUBKAT+nR9mCt+ya5Ls74Ya6hmt8TVgqjQwxnOMv/KuqcDZg0suqNin3ZSrWxp2lpAV+iv97xg0h8gZi4gHRI3mvlUaoW3nBTLpvvfIaFL64pbmy2N03vwVs5sSIpuBiQumE8artp3cNzN3zr+UZny6xnAQ1cdP1hIqjUQgqkge7pTd0Vf9Z8bpjHxGqBY9xZlmnAUtZoMOSPvFF2rIkeUWu8BhuY6qSSUJBsvx/WOWAk5gs84j/NF2Xz0PCnB0ZPglEPi1cNg/YNuM2mfKZAK8x8pR8YNRZsN1+8xwrOnVR2/JKs+uSQkHcSPd4y8dHCJLYlB30bjgc5HHhvsxUriV3xyE1yyISfxXOxh3al+y5qh83dACZQdtuQvP2hlBPyW9acMPHS70IqMxpxhrVKxrw8/4ROh9+r1/xmqTsAvH0XcxBe1M2rfDtZLUiE+r2LJgxFoi5wrLjweZUB9/yWYeB+g03A78RpgvPbCah1veiaiOx1bfnIAbUO+mZxKpUVrHed6M9bH4XwbztnQMaiTKNmCq/dwodizeKwCC8kbXXoAQ6WOcg2MYb2XEMmrggrtSeTGKjSSbIYbVjeB77/t4lexuAYJbQHXhdlPe6EislFiIGZhckf6URVIIDdjfLCag/OJ5aGJ7C6a2x8kSarY9iLAR"};
+const COMING = [{"emoji":"msr:pulmonology","title":"Respiratory System","summary":"Breathing, oxygen & carbon dioxide, and why breathing speeds up during exercise."}];
 const ADDED_KEY = 'mynotes_added_v1';
 const APIKEY_KEY = 'claude_api_key_v1';
 let KEY=null, BAKED=[], NOTES=[];
@@ -133,6 +167,7 @@ const PRISTINE='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
 function fromB64(s){const b=atob(s);const u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;}
 function toB64(buf){let s='';const u=new Uint8Array(buf);for(let i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s);}
 function esc(s){return (s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+function icon(v){ if(v&&v.indexOf('msr:')===0){return '<span class="msr">'+esc(v.slice(4))+'</span>';} return esc(v)||'📄'; }
 function $(id){return document.getElementById(id);}
 
 async function deriveKey(pw){
@@ -181,22 +216,22 @@ async function saveAdded(){
 function renderLibrary(){
   $('detail').style.display='none';$('library').style.display='block';
   var real=NOTES.map(function(n,i){return '<div class="note-card cc'+(i%5)+'" data-i="'+i+'">'+
-    '<div class="ic">'+(n.emoji||'📄')+'</div><h3>'+esc(n.title)+'</h3>'+
+    '<div class="ic">'+icon(n.emoji)+'</div><h3>'+esc(n.title)+'</h3>'+
     '<p>'+esc(n.summary||'')+'</p><span class="tg">'+esc(n.tag||'Note')+' →</span></div>';}).join('');
   var soon=COMING.map(function(c){return '<div class="note-card soon" data-topic="'+esc(c.title)+'">'+
-    '<div class="ic">'+(c.emoji||'⏳')+'</div><h3>'+esc(c.title)+'</h3>'+
-    '<p>'+esc(c.summary||'')+'</p><span class="tg">Tap to generate ✨</span></div>';}).join('');
+    '<div class="ic">'+icon(c.emoji||'⏳')+'</div><h3>'+esc(c.title)+'</h3>'+
+    '<p>'+esc(c.summary||'')+'</p><span class="tg"><span class="msr">auto_awesome</span>Tap to generate</span></div>';}).join('');
   var creator='<div class="note-card creator" id="creatorCard">'+
-    '<div class="ic">✨</div><h3>Add a new topic</h3>'+
+    '<div class="ic"><span class="msr">auto_awesome</span></div><h3>Add a new topic</h3>'+
     '<p>Type any topic and Claude writes the note, added right here.</p>'+
-    '<span class="tg">＋ New note</span></div>';
+    '<span class="tg"><span class="msr">add</span>New note</span></div>';
   $('grid').innerHTML=real+soon+creator;
 }
 
 function openNote(i){
   var n=NOTES[i];var isAdded=!BAKED.some(function(b){return b.id===n.id;});
-  $('detailBody').innerHTML='<h2 class="dt">'+(n.emoji||'')+' '+esc(n.title)+'</h2>'+n.body+
-    (isAdded?'<div style="margin-top:20px;"><button class="btn delnote" data-del="'+n.id+'">🗑 Delete this note</button></div>':'');
+  $('detailBody').innerHTML='<h2 class="dt">'+icon(n.emoji)+' '+esc(n.title)+'</h2>'+n.body+
+    (isAdded?'<div style="margin-top:20px;"><md-filled-tonal-button data-del="'+n.id+'"><md-icon slot="icon">delete</md-icon>Delete this note</md-filled-tonal-button></div>':'');
   $('library').style.display='none';$('detail').style.display='block';window.scrollTo(0,0);
 }
 async function delNote(id){
@@ -208,6 +243,9 @@ async function delNote(id){
 /* ---- AI generation ---- */
 function openGen(topic){
   $('topic').value=topic||'';
+  $('customPrompt').value='';
+  $('customWrap').style.display='none';
+  $('toggleCustom').innerHTML='<span class="msr">edit</span>Write a custom prompt instead';
   var savedKey=localStorage.getItem(APIKEY_KEY)||'';
   $('apikey').value=savedKey;
   $('status').textContent='';$('status').style.color='';
@@ -216,11 +254,10 @@ function openGen(topic){
 }
 function closeGen(){$('modal').style.display='none';}
 
-function buildPrompt(topic){
-  return [
-    'Write a study note for a Primary 5 (age 10-11) student on this topic: "'+topic+'".',
+var FORMAT_RULES=[
     'Return ONLY a JSON object (no markdown, no code fences) with these exact fields:',
-    '{"title": short title, "emoji": one relevant emoji, "tag": e.g. "Science \u00b7 P5", "summary": one-sentence description, "body": HTML string}',
+    '{"title": short title, "emoji": card icon, "tag": e.g. "Science \u00b7 P5", "summary": one-sentence description, "body": HTML string}',
+    'For "emoji", give a Google Material Symbols (Rounded) icon in the form "msr:icon_name" that fits the topic. Use a REAL Material Symbols name in snake_case. Examples: "msr:science", "msr:calculate", "msr:public", "msr:history_edu", "msr:menu_book", "msr:eco", "msr:water_drop", "msr:bolt", "msr:pets", "msr:cardiology", "msr:pulmonology", "msr:psychology", "msr:translate", "msr:music_note", "msr:brush". If unsure a name is valid, fall back to a single plain emoji instead.',
     'The "body" HTML must be kid-friendly and may ONLY use these CSS classes for styling:',
     '- <div class="n-big"> for a highlighted Big Idea box',
     '- <div class="n-cols"> containing two <div class="n-card2"> and/or <div class="n-card3"> comparison cards (each with an <h3> and a <ul>)',
@@ -230,19 +267,28 @@ function buildPrompt(topic){
     '- <div class="n-chips"> containing <span> keyword chips',
     '- <div class="n-qa"> each with a <b>Q: ...</b> then a <div> answer, for practice questions',
     'Use <b> for bold. Keep it accurate, simple, and encouraging. Output the JSON only.'
-  ].join('\n');
+];
+function buildPromptCustom(request){
+  return ['You are helping a student make a study note. Follow their request below and write the note. You choose a suitable, clear title yourself.',
+    '','STUDENT REQUEST:','"'+request+'"',''].concat(FORMAT_RULES).join('\n');
+}
+function buildPrompt(topic){
+  return ['Write a study note for a Primary 5 (age 10-11) student on this topic: "'+topic+'".',''].concat(FORMAT_RULES).join('\n');
 }
 
 async function generate(){
   var topic=$('topic').value.trim();
+  var custom=$('customPrompt').value.trim();
+  var usingCustom=$('customWrap').style.display!=='none' && custom.length>0;
   var apikey=$('apikey').value.trim();
   var model=$('model').value.trim();
   var st=$('status');
-  if(!topic){st.style.color='#B3261E';st.textContent='Please enter a topic.';return;}
+  if(!usingCustom && !topic){st.style.color='#B3261E';st.textContent='Enter a topic, or write a custom prompt.';return;}
   if(!apikey){st.style.color='#B3261E';st.textContent='Please enter your Claude API key.';return;}
   localStorage.setItem(APIKEY_KEY,apikey);
   st.style.color='var(--on-surface-variant)';st.textContent='Asking Claude to write your note…';
   $('genBtn').disabled=true;
+  var prompt=usingCustom?buildPromptCustom(custom):buildPrompt(topic);
   try{
     var res=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',
@@ -252,7 +298,7 @@ async function generate(){
         'anthropic-version':'2023-06-01',
         'anthropic-dangerous-direct-browser-access':'true'
       },
-      body:JSON.stringify({model:model,max_tokens:3000,messages:[{role:'user',content:buildPrompt(topic)}]})
+      body:JSON.stringify({model:model,max_tokens:3000,messages:[{role:'user',content:prompt}]})
     });
     if(!res.ok){var t=await res.text();throw new Error('API '+res.status+': '+t.slice(0,180));}
     var data=await res.json();
@@ -288,6 +334,12 @@ $('backBtn').addEventListener('click',renderLibrary);
 $('exportBtn').addEventListener('click',exportSite);
 $('cancelBtn').addEventListener('click',closeGen);
 $('genBtn').addEventListener('click',generate);
+$('toggleCustom').addEventListener('click',function(){
+  var w=$('customWrap');var open=w.style.display!=='none';
+  w.style.display=open?'none':'block';
+  $('toggleCustom').innerHTML=open?'<span class="msr">edit</span>Write a custom prompt instead':'<span class="msr">expand_less</span>Use the simple topic box';
+  if(!open)$('customPrompt').focus();
+});
 $('forgetKey').addEventListener('click',function(){localStorage.removeItem(APIKEY_KEY);$('apikey').value='';$('status').style.color='var(--on-surface-variant)';$('status').textContent='Saved key forgotten.';});
 $('grid').addEventListener('click',function(e){
   var creator=e.target.closest('#creatorCard'); if(creator){openGen('');return;}
@@ -295,7 +347,7 @@ $('grid').addEventListener('click',function(e){
   var c=e.target.closest('[data-i]'); if(c){openNote(parseInt(c.getAttribute('data-i')));}
 });
 $('detailBody').addEventListener('click',function(e){
-  var d=e.target.getAttribute('data-del'); if(d)delNote(d);
+  var b=e.target.closest('[data-del]'); if(b)delNote(b.getAttribute('data-del'));
 });
 </script>
 </body>
